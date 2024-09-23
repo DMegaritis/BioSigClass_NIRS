@@ -27,13 +27,11 @@ Model D: (301, 20)
 Installation
 Clone the repository:
 
-bash
+```
 git clone https://github.com/yourusername/NIRS-CNN-Classification.git
 cd NIRS-CNN-Classification
-Install the required dependencies:
+```
 
-bash
-pip install -r requirements.txt
 Running the Models
 To run any of the models, you can use the following command:
 
