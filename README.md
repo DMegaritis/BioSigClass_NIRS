@@ -32,8 +32,8 @@ git clone https://github.com/DMegaritis/NIRS-CNN-Classification.git
 cd NIRS-CNN-Classification
 ```
 
-Running the Models
-To run any of the models, execute the load_model.py script. Ensure your data is saved as an .npy file with the following shape:
+Running the Models 
+An example of how to load the pre-trained model, load data, and make predictions is available in the load_model.py script. Ensure that your data is saved as a .npy file with the following shape:
 
 Shape: (number_of_chunks, 151/301, 8/20)
 151/301 refers to the time steps (151 for Models A and C, 301 for Models B and D).
