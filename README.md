@@ -33,5 +33,8 @@ cd NIRS-CNN-Classification
 ```
 
 Running the Models
-To run any of the models, you can use the following command:
+To run any of the models, execute the load_model.py script. Ensure your data is saved as an .npy file with the following shape:
 
+Shape: (number_of_chunks, 151/301, 8/20)
+151/301 refers to the time steps (151 for Models A and C, 301 for Models B and D).
+8/20 refers to the number of features (8 for Models A and B, 20 for Models C and D).
