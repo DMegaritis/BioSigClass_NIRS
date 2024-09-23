@@ -28,7 +28,7 @@ Installation
 Clone the repository:
 
 ```
-git clone https://github.com/yourusername/NIRS-CNN-Classification.git
+git clone https://github.com/DMegaritis/NIRS-CNN-Classification.git
 cd NIRS-CNN-Classification
 ```
 
