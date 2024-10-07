@@ -15,5 +15,10 @@ data = np.load(example_data_path)
 
 # Make predictions
 predictions = model.predict(data)
-predicted_classes = (predictions > 0.5).astype(int)
+predicted_classes = (predictions >= 0.5).astype(int)
 print("Predictions:", predicted_classes)
+
+# Map the predicted class (0 or 1) to their respective labels: "Healthy" or "Covid"
+predicted_labels = ["Healthy", "Covid"]
+predicted_mapped = [predicted_labels[i] for i in predicted_classes.flatten()]
+print(predicted_mapped)
