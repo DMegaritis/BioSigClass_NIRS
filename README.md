@@ -7,10 +7,10 @@ This project focuses on classifying muscle oxygenation and blood flow data from 
 Models
 Four different CNN models have been developed, each using different input configurations:
 
-Model A: Uses the last 30 seconds of each time period with TOI data from four channels. Input shape: (151, 8)
-Model B: Uses the first 60 seconds of each time period with TOI data from four channels. Input shape: (301, 8)
-Model C: Uses the last 30 seconds of each time period, incorporating all variables (O2Hb, HHb, TOI, and nTHI) from four channels. Input shape: (151, 20)
-Model D: Uses the first 60 seconds of each time period, incorporating all variables (O2Hb, HHb, TOI, and nTHI) from four channels. Input shape: (301, 20)
+Model A: Uses the last 30 seconds of each time period with TOI data from four channels and one hot encoded period labels indicating different states of activity. Input shape: (151, 8)
+Model B: Uses the first 60 seconds of each time period with TOI data from four channels and one hot encoded period labels indicating different states of activity. Input shape: (301, 8)
+Model C: Uses the last 30 seconds of each time period, incorporating TOI and nTHI without period lables. Input shape: (151, 8)
+Model D: Uses the first 60 seconds of each time period, incorporating TOI and nTHI withoout period labels. Input shape: (301, 8)
 
 Data Requirements
 The input data for these models should have the following structure:
@@ -21,8 +21,8 @@ Features: The number of features in each time step. For Models A and B, this is 
 Example Data Shapes:
 Model A: (151, 8)
 Model B: (301, 8)
-Model C: (151, 20)
-Model D: (301, 20)
+Model C: (151, 8)
+Model D: (301, 8)
 
 Installation
 Clone the repository:
