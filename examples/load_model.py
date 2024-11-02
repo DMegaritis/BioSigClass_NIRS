@@ -1,4 +1,5 @@
 import numpy as np
+from sklearn.preprocessing import StandardScaler
 try:
     from tensorflow.keras.models import load_model
     print("Import successful!")
@@ -13,8 +14,16 @@ model = load_model(model_path)
 example_data_path = '../examples/example_data.npy'
 data = np.load(example_data_path)
 
+# Reshaping the data to scale (example data have a shape of (5, 301, 8))
+reshaped_data = data.reshape(-1, 8)
+scaler = StandardScaler()
+scaled_data = scaler.fit_transform(reshaped_data)
+
+# Reshaping back to the original 3D shape of the example data (5, 301, 8)
+scaled_data = scaled_data.reshape(5, 301, 8)
+
 # Make predictions
-predictions = model.predict(data)
+predictions = model.predict(scaled_data)
 predicted_classes = (predictions >= 0.5).astype(int)
 print("Predictions:", predicted_classes)
 
