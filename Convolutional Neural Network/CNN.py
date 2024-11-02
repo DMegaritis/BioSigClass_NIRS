@@ -3,6 +3,7 @@ import tensorflow as tf
 from keras.src.callbacks import EarlyStopping
 from sklearn.model_selection import GroupKFold
 from sklearn.metrics import cohen_kappa_score, f1_score, recall_score, precision_score, accuracy_score, roc_auc_score, roc_curve
+from sklearn.preprocessing import StandardScaler
 import time
 import matplotlib.pyplot as plt
 import pandas as pd
@@ -68,7 +69,7 @@ class CNN_Classifier:
         model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy'])
         return model
 
-    def train(self):
+    def train(self, scale=False):
         """
         Train the CNN model using group k-fold cross-validation and evaluate using various metrics.
 
@@ -95,6 +96,12 @@ class CNN_Classifier:
         for train_index, test_index in gkf.split(self.features, self.target, self.groups):
             X_train, X_test = self.features[train_index], self.features[test_index]
             y_train, y_test = self.target[train_index], self.target[test_index]
+
+            if scale == True:
+                # Scale the features
+                scaler = StandardScaler()
+                X_train = scaler.fit_transform(X_train.reshape(-1, X_train.shape[-1])).reshape(X_train.shape)
+                X_test = scaler.transform(X_test.reshape(-1, X_test.shape[-1])).reshape(X_test.shape)
 
             # Create a new CNN model for each fold
             model = self.create_cnn_model(input_shape=X_train.shape[1:])
