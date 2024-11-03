@@ -66,3 +66,17 @@ The ```examples``` folder contains:
 
 **Model Loading Script:** An example script ```load_model.py``` that demonstrates how to load a pre-trained model and use it with new data.
 
+
+## Notes to aid re-training of the models
+During training, the following parameters were used:
+
+| Parameter     | Value    |
+|---------------|----------|
+| n_splits      | 5        |
+| epochs        | 50       |
+| batch_size    | 32       |
+
+### Example
+```python
+cnn_classifier = CNN_Classifier(features=features, target=target, groups=groups, n_splits=5, epochs=50, batch_size=32)
+cnn_classifier.train()```
