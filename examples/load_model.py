@@ -10,6 +10,9 @@ except ImportError as e:
 model_path = '../pre_trained_models/model_D.h5'
 model = load_model(model_path)
 
+# Optionally we can recompile the model (using the same loss and optimizer as during training)
+model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy'])
+
 # Load the example data
 example_data_path = '../examples/example_data.npy'
 data = np.load(example_data_path)
@@ -18,7 +21,6 @@ data = np.load(example_data_path)
 reshaped_data = data.reshape(-1, 8)
 scaler = StandardScaler()
 scaled_data = scaler.fit_transform(reshaped_data)
-
 # Reshaping back to the original 3D shape of the example data (5, 301, 8)
 scaled_data = scaled_data.reshape(5, 301, 8)
 
