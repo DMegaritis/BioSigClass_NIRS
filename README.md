@@ -60,8 +60,9 @@ cd NIRS-CNN-Classification
 
 ## Examples
 
-The examples folder contains:
+The ```examples``` folder contains:
 
-**Sample Test Data:** This data can be used to test and understand model functionality.
+**Sample Test Data:** ```example_data.npy``` includes example data to test and understand the model's functionality.
+
 **Model Loading Script:** An example script ```load_model.py``` that demonstrates how to load a pre-trained model and use it with new data.
 
