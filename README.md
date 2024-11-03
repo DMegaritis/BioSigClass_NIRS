@@ -1,4 +1,4 @@
-NIRS-CNN-Classification
+#NIRS-CNN-Classification
 NIRS-CNN-Classification is a repository that provides an implementation of a convolutional neural network (CNN) designed for classifying Near-Infrared Spectroscopy (NIRS) data. This model is particularly focused on data from the vastus lateralis muscle. Developed as part of a study on muscle oxygenation and blood flow, it evaluates these parameters across different activity states (rest, unloaded exercise, exercise, and recovery) in both post-hospitalized long COVID-19 patients and healthy, age-matched individuals.
 
 Project Overview
