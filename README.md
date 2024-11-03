@@ -55,6 +55,7 @@ To use this repository:
 ```bash
 git clone https://github.com/DMegaritis/NIRS-CNN-Classification.git
 cd NIRS-CNN-Classification
+```
 
 
 ## Examples
