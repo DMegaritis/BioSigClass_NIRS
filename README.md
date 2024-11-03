@@ -55,3 +55,12 @@ To use this repository:
 ```bash
 git clone https://github.com/DMegaritis/NIRS-CNN-Classification.git
 cd NIRS-CNN-Classification
+
+
+## Examples
+
+The examples folder contains:
+
+**Sample Test Data:** This data can be used to test and understand model functionality.
+**Model Loading Script:** An example script ```load_model.py``` that demonstrates how to load a pre-trained model and use it with new data.
+
