@@ -76,7 +76,7 @@ During training, the following parameters were used:
 | epochs        | 50       |
 | batch_size    | 32       |
 
-### Example
+### Initial training
 ```python
 cnn_classifier = CNN_Classifier(features=features, target=target, groups=groups, n_splits=5, epochs=50, batch_size=32)
 cnn_classifier.train()```
