@@ -33,6 +33,7 @@ cd NIRS-CNN-Classification
 ```
 
 Running the Models 
+
 To run a pre-trained model, use the example script in ```load_model.py```. Ensure your data is saved as a .npy
 
 Shape: (number_of_chunks, 151/301, 8)
