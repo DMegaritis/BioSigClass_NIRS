@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "nirs-cnn-classification"
+version = "0.1.0"
+description = ""
+authors = ["dmegaritis <dmgrei3@gmail.com>"]
+license = "Apache-2.0"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+tensorflow = "^2.18.0"
+keras = "^3.6.0"
+scikit-learn = "^1.5.2"
+matplotlib = "^3.9.2"
+pandas = "^2.2.3"
+numpy = "^2.1.3"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
