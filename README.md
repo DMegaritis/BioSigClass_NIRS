@@ -50,12 +50,22 @@ Input data for these models should conform to the following specifications:
 
 ## Installation
 
-To use this repository:
+To set up the environment and install the required dependencies for this repository, follow these steps:
 
-```bash
-git clone https://github.com/DMegaritis/NIRS-CNN-Classification.git
-cd NIRS-CNN-Classification
-```
+1. Clone the repository:
+
+    ```bash
+    git clone https://github.com/DMegaritis/NIRS-CNN-Classification.git
+    cd NIRS-CNN-Classification
+    ```
+
+2. Install dependencies using Poetry:
+
+    ```bash
+    poetry install
+    ```
+
+This will create a virtual environment and install all necessary dependencies as specified in the `pyproject.toml` file.
 
 
 ## Examples
