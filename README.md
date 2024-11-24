@@ -1,6 +1,6 @@
-# NIRS-CNN-Classification
+# BioSigClass_NIRS
 
-**NIRS-CNN-Classification** is a repository that provides implementations of convolutional neural networks (CNN) designed for classifying Near-Infrared Spectroscopy (NIRS) data. This model is particularly focused on data from the vastus lateralis muscle. Developed as part of a study on muscle oxygenation and blood flow, it evaluates these parameters across different activity states (rest, unloaded exercise, exercise, and recovery) in both post-hospitalized long COVID-19 patients and healthy, age-matched individuals.
+**BioSigClass_NIRS** is a repository that provides implementations of convolutional neural networks (CNN) designed for classifying Near-Infrared Spectroscopy (NIRS) data. This model is particularly focused on data from the vastus lateralis muscle. Developed as part of a study on muscle oxygenation and blood flow, it evaluates these parameters across different activity states (rest, unloaded exercise, exercise, and recovery) in both post-hospitalized long COVID-19 patients and healthy, age-matched individuals.
 
 ## Project Overview
 
@@ -55,8 +55,8 @@ To set up the environment and install the required dependencies for this reposit
 1. Clone the repository:
 
     ```bash
-    git clone https://github.com/DMegaritis/NIRS-CNN-Classification.git
-    cd NIRS-CNN-Classification
+    git clone https://github.com/DMegaritis/BioSigClass_NIRS.git
+    cd BioSigClass_NIRS
     ```
 
 2. Install dependencies using Poetry:
