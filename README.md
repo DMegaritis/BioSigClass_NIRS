@@ -89,4 +89,5 @@ During training, the following parameters were used:
 ### Initial training
 ```python
 cnn_classifier = CNN_Classifier(features=features, target=target, groups=groups, n_splits=5, epochs=50, batch_size=32)
-cnn_classifier.train()```
+cnn_classifier.train()
+```
