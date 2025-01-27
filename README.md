@@ -10,23 +10,23 @@ This project centers on classifying NIRS data related to muscle oxygenation and 
 
 Four distinct CNN models have been developed, each with unique input configurations:
 
-- **Model A**:  
-  - Uses the last 30 seconds of a time period.
+- **Model A**:
+  - Trained on the last 30 seconds of a time period and requires 30-second periods as input.
   - Input data: TOI from 4 channels and one-hot encoded activity labels.
   - **Input Shape**: `(151, 8)`
 
 - **Model B**:  
-  - Uses the first 60 seconds of a time period.
+  - Trained on the first 60 seconds of a time period and requires 60-second periods as input.
   - Input data: TOI from 4 channels and one-hot encoded activity labels.
   - **Input Shape**: `(301, 8)`
 
 - **Model C**:  
-  - Uses the last 30 seconds of a time period without activity labels.
+  - Trained on the last 30 seconds of a time period without activity labels and requires 30-second periods as input.
   - Input data: TOI and nTHI from 4 channels.
   - **Input Shape**: `(151, 8)`
 
 - **Model D**:  
-  - Uses the first 60 seconds of a time period without activity labels.
+  - Trained on the first 60 seconds of a time period without activity labels and requires 60-second periods as input.
   - Input data: TOI and nTHI from 4 channels.
   - **Input Shape**: `(301, 8)`
 
