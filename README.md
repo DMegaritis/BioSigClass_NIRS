@@ -35,7 +35,7 @@ Four distinct CNN models have been developed, each with unique input configurati
 Input data for these models should conform to the following specifications:
 
 - **Shape**: `(time_steps, features)`
-  - `time_steps`: 151 for Models A and C; 301 for Models B and D.
+  - `time_steps`: 151 for Models A and C (30 seconds); 301 for Models B and D (60 seconds).
   - `features`: 8 features per time step, comprising:
     - **Models A and B**: TOI from 4 channels plus one-hot encoded period features (rest, warm-up, exercise, recovery).
     - **Models C and D**: TOI and nTHI from 4 channels.
