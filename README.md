@@ -94,4 +94,5 @@ cnn_classifier.train()
 
 ## Abbreviations
 TOI: Total Oxygen Index (refered to as StiO2 as well)
+
 nTHI: normalized Total Haemoglobin Index
