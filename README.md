@@ -4,7 +4,7 @@
 
 ## Project Overview
 
-This project centers on classifying NIRS data related to muscle oxygenation and blood flow using a 1D CNN model. The data were collected from various muscle regions via optodes placed on the skin. The primary objective is to classify populations based on their physiological and activity states (such as rest, exercise, and recovery) by analyzing these variables.
+This project centers on classifying NIRS data related to muscle oxygenation and blood flow using a 1D CNN model. The data were collected from various muscle regions via optodes placed on the skin. The primary objective is to classify populations based on their physiological responses across various activity states (such as resting, exercising, and recovering from exercise) by analyzing these variables.
 
 ## Model Overview
 
