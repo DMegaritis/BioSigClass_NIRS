@@ -1,6 +1,6 @@
 # BioSigClass_NIRS
 
-**BioSigClass_NIRS** is a repository that provides implementations of convolutional neural networks (CNN) designed for classifying Near-Infrared Spectroscopy (NIRS) data. This model is particularly focused on data from the vastus lateralis muscle. Developed as part of a study on muscle oxygenation and blood flow, it evaluates these parameters across different activity states (rest, unloaded exercise, exercise, and recovery) in both post-hospitalized long COVID-19 patients and healthy, age-matched individuals.
+**BioSigClass_NIRS** is a repository that provides implementations of convolutional neural networks (CNN) for classifying Near-Infrared Spectroscopy (NIRS) data related to human tissue oxygenation. The models are particularly focused on data from the vastus lateralis muscle. Developed as part of a study on muscle oxygenation and blood flow, it evaluates these parameters across different activity states (rest, unloaded exercise, exercise, and recovery) in both post-hospitalized long COVID-19 patients and healthy, age-matched individuals.
 
 ## Project Overview
 
