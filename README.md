@@ -91,3 +91,7 @@ During training, the following parameters were used:
 cnn_classifier = CNN_Classifier(features=features, target=target, groups=groups, n_splits=5, epochs=50, batch_size=32)
 cnn_classifier.train()
 ```
+
+## Abbreviations
+TOI: Total Oxygen Index (refered to as StiO2 as well)
+nTHI: normalized Total Haemoglobin Index
