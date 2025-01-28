@@ -240,6 +240,12 @@ class CNN_Classifier:
         # Trainning the final model on the entire dataset to save
         final_model = self.create_cnn_model(input_shape=self.features.shape[1:])
 
+        if scale:
+            # Scale the features
+            scaler = StandardScaler()
+            self.features = scaler.fit_transform(self.features.reshape(-1, self.features.shape[-1])).reshape(
+                self.features.shape)
+
         history = final_model.fit(self.features, self.target,
                                   epochs=self.epochs,
                                   batch_size=self.batch_size,
