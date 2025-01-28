@@ -73,6 +73,11 @@ class CNN_Classifier:
         """
         Train the CNN model using group k-fold cross-validation and evaluate using various metrics.
 
+        Parameters
+        ----------
+        scale : bool
+            Whether to scale the features
+
         Returns
         -------
         None
