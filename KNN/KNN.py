@@ -6,8 +6,6 @@ from sklearn.model_selection import GroupKFold
 from sklearn.metrics import cohen_kappa_score, f1_score, recall_score, precision_score, accuracy_score, roc_auc_score, roc_curve
 from sklearn.preprocessing import StandardScaler
 from tslearn.neighbors import KNeighborsTimeSeriesClassifier
-from tslearn.preprocessing import TimeSeriesScalerMeanVariance
-from tslearn.metrics import dtw
 import pickle
 
 class KNN_DTW_Classifier:
@@ -59,11 +57,13 @@ class KNN_DTW_Classifier:
             X_train, X_test = self.features[train_index], self.features[test_index]
             y_train, y_test = self.target[train_index], self.target[test_index]
 
+
             if self.scale:
                 # Scale the features
-                scaler = TimeSeriesScalerMeanVariance()  # Scales the time series to mean=0, variance=1
-                X_train = scaler.fit_transform(X_train)
-                X_test = scaler.transform(X_test)
+                scaler = StandardScaler()
+                X_train = scaler.fit_transform(X_train.reshape(-1, X_train.shape[-1])).reshape(X_train.shape)
+                X_test = scaler.transform(X_test.reshape(-1, X_test.shape[-1])).reshape(X_test.shape)
+
 
             # Create the KNN model with DTW as distance metric
             knn = KNeighborsTimeSeriesClassifier(n_neighbors=self.n_neighbors, metric="dtw")
@@ -184,8 +184,9 @@ class KNN_DTW_Classifier:
 
         if self.scale:
             # Scale the features
-            scaler = TimeSeriesScalerMeanVariance()
-            self.features = scaler.fit_transform(self.features)
+            scaler = StandardScaler()
+            self.features = scaler.fit_transform(self.features.reshape(-1, self.features.shape[-1])).reshape(
+                self.features.shape)
 
         # Train the KNN model
         final_knn.fit(self.features, self.target)
