@@ -7,7 +7,7 @@ except ImportError as e:
     print(f"Import failed: {e}")
 
 # Load the model
-model_path = '../pre_trained_models/model_D.h5'
+model_path = '../pre_trained_models/CNN/model_D.h5'
 model = load_model(model_path)
 
 # Optionally we can recompile the model (using the same loss and optimizer as during training)
