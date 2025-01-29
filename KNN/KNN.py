@@ -25,7 +25,7 @@ class KNN_DTW_Classifier:
     n_neighbors : int
         Number of neighbors for KNN.
     """
-    def __init__(self, features, target, groups, n_splits=5, n_neighbors=3, scale=False):
+    def __init__(self, features, target, groups, n_splits=5, n_neighbors=15, scale=False):
         self.features = features
         self.target = target
         self.groups = groups
