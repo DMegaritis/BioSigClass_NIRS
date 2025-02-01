@@ -11,7 +11,7 @@ import pickle
 
 class CIF_Classifier:
     """
-    This class trains a Canonical Interval Forest (CIF) classifier using group k-fold cross-validation.
+    This class trains a Canonical Interval Forest (Canonical Interval Forest) classifier using group k-fold cross-validation.
 
     Attributes
     ----------
@@ -36,7 +36,7 @@ class CIF_Classifier:
 
     def train(self):
         """
-        Train the CIF model using group k-fold cross-validation and evaluate using various metrics.
+        Train the Canonical Interval Forest model using group k-fold cross-validation and evaluate using various metrics.
 
         Returns
         -------
@@ -125,7 +125,7 @@ class CIF_Classifier:
         plt.plot([0, 1], [0, 1], color='grey', linestyle='--')
         plt.xlabel('Specificity')
         plt.ylabel('Sensitivity')
-        plt.title('ROC Curve for Test Set (CIF)')
+        plt.title('ROC Curve for Test Set (Canonical Interval Forest)')
         plt.legend(loc='lower right')
         plt.show()
 
@@ -137,7 +137,7 @@ class CIF_Classifier:
         plt.plot([0, 1], [0, 1], color='grey', linestyle='--')
         plt.xlabel('Specificity')
         plt.ylabel('Sensitivity')
-        plt.title('ROC Curve for Training Set (CIF)')
+        plt.title('ROC Curve for Training Set (Canonical Interval Forest)')
         plt.legend(loc='lower right')
         plt.show()
 
