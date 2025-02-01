@@ -10,7 +10,7 @@ import pickle
 
 class KNN_DTW_Classifier:
     """
-    This class trains a KNN model with DTW for classification tasks using group k-fold cross-validation.
+    This class trains a K-Nearest Neighbors model with Dynamic Time Wrapping for classification tasks using group k-fold cross-validation.
 
     Attributes
     ----------
@@ -23,7 +23,7 @@ class KNN_DTW_Classifier:
     n_splits : int
         Number of folds for cross-validation.
     n_neighbors : int
-        Number of neighbors for KNN.
+        Number of neighbors for K-Nearest Neighbors.
     """
     def __init__(self, features, target, groups, n_splits=5, n_neighbors=15, scale=False):
         self.features = features
@@ -35,7 +35,7 @@ class KNN_DTW_Classifier:
 
     def train(self):
         """
-        Train the KNN model with DTW distance using group k-fold cross-validation and evaluate using various metrics.
+        Train the K-Nearest Neighbors model with Dynamic Time Wrapping distance using group k-fold cross-validation and evaluate using various metrics.
 
         Returns
         -------
@@ -52,7 +52,7 @@ class KNN_DTW_Classifier:
 
         start_time = time.time()
 
-        # Create and train KNN classifier
+        # Create and train K-Nearest Neighbors classifier
         for train_index, test_index in gkf.split(self.features, self.target, self.groups):
             X_train, X_test = self.features[train_index], self.features[test_index]
             y_train, y_test = self.target[train_index], self.target[test_index]
@@ -65,10 +65,10 @@ class KNN_DTW_Classifier:
                 X_test = scaler.transform(X_test.reshape(-1, X_test.shape[-1])).reshape(X_test.shape)
 
 
-            # Create the KNN model with DTW as distance metric
+            # Create the K-Nearest Neighbors model with DTW as distance metric
             knn = KNeighborsTimeSeriesClassifier(n_neighbors=self.n_neighbors, metric="dtw")
 
-            # Train the KNN model
+            # Train the K-Nearest Neighbors model
             knn.fit(X_train, y_train)
 
             # Make predictions
@@ -151,7 +151,7 @@ class KNN_DTW_Classifier:
         plt.plot([0, 1], [0, 1], color='grey', linestyle='--')
         plt.xlabel('Specificity')
         plt.ylabel('Sensitivity')
-        plt.title('ROC Curve for model evaluation (KNN)')
+        plt.title('ROC Curve for model evaluation (K-Nearest Neighbors)')
         plt.legend(loc='lower right')
         plt.show()
 
@@ -163,7 +163,7 @@ class KNN_DTW_Classifier:
         plt.plot([0, 1], [0, 1], color='grey', linestyle='--')
         plt.xlabel('Specificity')
         plt.ylabel('Sensitivity')
-        plt.title('ROC Curve for training set (KNN)')
+        plt.title('ROC Curve for training set (K-Nearest Neighbors)')
         plt.legend(loc='lower right')
         plt.show()
 
@@ -188,7 +188,7 @@ class KNN_DTW_Classifier:
             self.features = scaler.fit_transform(self.features.reshape(-1, self.features.shape[-1])).reshape(
                 self.features.shape)
 
-        # Train the KNN model
+        # Train the K-Nearest Neighbors model
         final_knn.fit(self.features, self.target)
 
         # Save the model
