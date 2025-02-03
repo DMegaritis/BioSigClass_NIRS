@@ -1,21 +1,25 @@
-[tool.poetry]
-name = "nirs-cnn-classification"
-version = "0.1.0"
+[project]
+name = "biosigclass-nirs"
+version = "0.1.1"
 description = ""
-authors = ["dmegaritis <dmgrei3@gmail.com>"]
-license = "Apache-2.0"
+authors = [
+    {name = "dmegaritis",email = "dmgrei3@gmail.com"}
+]
+license = {text = "Apache-2.0"}
 readme = "README.md"
-
-[tool.poetry.dependencies]
-python = "^3.12"
-tensorflow = "^2.18.0"
-keras = "^3.6.0"
-scikit-learn = "^1.5.2"
-matplotlib = "^3.9.2"
-pandas = "^2.2.3"
-numpy = "^1.26.0"
+requires-python = ">=3.12,<3.14"
+dependencies = [
+    "numpy (>=1.21.0,<2.0.0)",
+    "scikit-learn (>=1.0.2,<2.0.0)",
+    "tensorflow (>=2.14.0,<2.17.0)",
+    "keras (>=3.8.0,<4.0.0)",
+    "matplotlib (>=3.10.0,<4.0.0)",
+    "pandas (>=2.2.3,<3.0.0)",
+    "sktime (>=0.35.1,<0.36.0)",
+    "tslearn (>=0.6.3,<0.7.0)"
+]
 
 
 [build-system]
-requires = ["poetry-core"]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
 build-backend = "poetry.core.masonry.api"
