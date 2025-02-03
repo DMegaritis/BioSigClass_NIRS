@@ -87,20 +87,20 @@ During training, the following parameters were used:
 | batch_size    | 32       |
 
 ### Initial training
-## KNN
+### KNN
 ```
-model = KNN_DTW_Classifier(features, target, groups, n_splits=5, n_neighbors=15, scale=True)
-model.train()
+knn = KNN_DTW_Classifier(features, target, groups, n_splits=5, n_neighbors=15, scale=True)
+knn.train()
 ```
-## CIF
+### CIF
 ```
-model = CIF_Classifier(features, target, groups, n_splits=5, n_estimators=50)
-model.train()
+cif = CIF_Classifier(features, target, groups, n_splits=5, n_estimators=50)
+cif.train()
 ```
-## CNN
+### CNN
 ```python
-cnn_classifier = CNN_Classifier(features=features, target=target, groups=groups, n_splits=5, epochs=50, batch_size=32)
-cnn_classifier.train()
+cnn = CNN_Classifier(features=features, target=target, groups=groups, n_splits=5, epochs=50, batch_size=32, scale=True)
+cnn.train()
 ```
 
 ## Abbreviations
