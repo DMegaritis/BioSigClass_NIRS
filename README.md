@@ -1,31 +1,31 @@
 # BioSigClass_NIRS
 
-**BioSigClass_NIRS** is a repository that provides implementations of convolutional neural networks (CNN) for classifying Near-Infrared Spectroscopy (NIRS) data related to human tissue oxygenation. The models are particularly focused on data from the vastus lateralis muscle. Developed as part of a study on muscle oxygenation and blood flow, the models are trained on these parameters across various activity states (rest, unloaded exercise, exercise, and recovery) to differentiate between post-hospitalized long COVID-19 patients and healthy, age-matched individuals.
+**BioSigClass_NIRS** is a repository that provides implementations of machine learning (K-Nearest Neighbors (KNN) with Dynamic Time Wrapping (DTW) and Canonical Interval Forests (CIF)) and deep learning models (convolutional neural networks (CNN)) for classifying Near-Infrared Spectroscopy (NIRS) data related to human tissue oxygenation. The models are particularly trained on data from the vastus lateralis muscle. Developed as part of a study on muscle oxygenation and blood flow, the models are trained on these parameters across various physical activity states (rest, unloaded exercise, exercise, and recovery) to differentiate between post-hospitalized long COVID-19 patients and healthy, age-matched individuals.
 
 ## Project Overview
 
-This project centers on classifying NIRS data related to muscle oxygenation and blood flow using a 1D CNN model. The data were collected from various muscle regions via optodes placed on the skin. The primary objective is to classify populations based on their physiological responses across various activity states (such as resting, exercising, and recovering from exercise) by analyzing these variables.
+This project centers on classifying NIRS data related to muscle oxygenation and blood flow using machine and deep learning models. The data were collected from various muscle regions via optodes placed on the skin. The primary objective is to classify populations based on their physiological responses across various physical activity states (such as resting, exercising, and recovering from exercise) by analyzing these variables.
 
-## Model Overview
+## Feature Sets
 
-Four distinct CNN models have been developed, each with unique input configurations:
+Four distinct feature sets have been developed, each with unique input configurations:
 
-- **Model A**:
+- **Feature set A**:
   - Trained on the last 30 seconds of a time period and requires 30-second periods as input.
   - Input data: TOI from 4 channels and one-hot encoded activity labels.
   - **Input Shape**: `(151, 8)`
 
-- **Model B**:  
+- **Feature set B**:  
   - Trained on the first 60 seconds of a time period and requires 60-second periods as input.
   - Input data: TOI from 4 channels and one-hot encoded activity labels.
   - **Input Shape**: `(301, 8)`
 
-- **Model C**:  
+- **Feature set C**:  
   - Trained on the last 30 seconds of a time period without activity labels and requires 30-second periods as input.
   - Input data: TOI and nTHI from 4 channels.
   - **Input Shape**: `(151, 8)`
 
-- **Model D**:  
+- **Feature set D**:  
   - Trained on the first 60 seconds of a time period without activity labels and requires 60-second periods as input.
   - Input data: TOI and nTHI from 4 channels.
   - **Input Shape**: `(301, 8)`
@@ -43,10 +43,10 @@ Input data for these models should conform to the following specifications:
 
 ### Example Data Shapes
 
-- **Model A**: `(151, 8)`
-- **Model B**: `(301, 8)`
-- **Model C**: `(151, 8)`
-- **Model D**: `(301, 8)`
+- **Feature set A**: `(151, 8)`
+- **Feature set B**: `(301, 8)`
+- **Feature set C**: `(151, 8)`
+- **Feature set D**: `(301, 8)`
 
 ## Installation
 
