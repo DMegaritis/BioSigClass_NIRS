@@ -1,6 +1,6 @@
 # BioSigClass_NIRS
 
-**BioSigClass_NIRS** is a repository that provides implementations of machine learning (K-Nearest Neighbors (KNN) with Dynamic Time Wrapping (DTW) and Canonical Interval Forests (CIF)) and deep learning models (convolutional neural networks (CNN)) for classifying Near-Infrared Spectroscopy (NIRS) data related to human tissue oxygenation. The models are particularly trained on data from the vastus lateralis muscle. Developed as part of a study on muscle oxygenation and blood flow, the models are trained on these parameters across various physical activity states (rest, unloaded exercise, exercise, and recovery) to differentiate between post-hospitalized long COVID-19 patients and healthy, age-matched individuals.
+**BioSigClass_NIRS** is a repository that provides implementations of machine learning (K-Nearest Neighbors (KNN) with Dynamic Time Wrapping (DTW) and Canonical Interval Forests (CIF)) and deep learning models (convolutional neural networks (CNN)) for classifying Near-Infrared Spectroscopy (NIRS) data related to human tissue oxygenation. The models are particularly trained on data from the vastus lateralis muscle. Developed as part of a study on muscle oxygenation and blood flow, the models are trained on these parameters across various physical activity states (rest, unloaded exercise, exercise, and recovery) to classify between post-hospitalized long COVID-19 patients and healthy, age-matched individuals.
 
 ## Project Overview
 
