@@ -87,6 +87,17 @@ During training, the following parameters were used:
 | batch_size    | 32       |
 
 ### Initial training
+## KNN
+```
+model = KNN_DTW_Classifier(features, target, groups, n_splits=5, n_neighbors=15, scale=True)
+model.train()
+```
+## CIF
+```
+model = CIF_Classifier(features, target, groups, n_splits=5, n_estimators=50)
+model.train()
+```
+## CNN
 ```python
 cnn_classifier = CNN_Classifier(features=features, target=target, groups=groups, n_splits=5, epochs=50, batch_size=32)
 cnn_classifier.train()
