@@ -28,7 +28,7 @@ class CNN_Classifier:
     batch_size : int
         Batch size for training.
     """
-    def __init__(self, features, target, groups, n_splits=5, epochs=20, batch_size=32, early_stopping=False):
+    def __init__(self, features, target, groups, n_splits=5, epochs=20, batch_size=32, early_stopping=False, scale=False):
         self.features = features
         self.target = target
         self.groups = groups
@@ -36,6 +36,7 @@ class CNN_Classifier:
         self.epochs = epochs
         self.batch_size = batch_size
         self.early_stopping = early_stopping
+        self.scale = scale
 
     def create_cnn_model(self, input_shape):
         """
@@ -45,6 +46,8 @@ class CNN_Classifier:
         ----------
         input_shape : tuple
             Shape of the input data (time_steps, channels).
+        scale : bool
+            If True, the features will be scaled using StandardScaler.
 
         Returns
         -------
@@ -69,14 +72,9 @@ class CNN_Classifier:
         model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy'])
         return model
 
-    def train(self, scale=False):
+    def train(self):
         """
         Train the CNN model using group k-fold cross-validation and evaluate using various metrics.
-
-        Parameters
-        ----------
-        scale : bool
-            Whether to scale the features
 
         Returns
         -------
@@ -102,7 +100,7 @@ class CNN_Classifier:
             X_train, X_test = self.features[train_index], self.features[test_index]
             y_train, y_test = self.target[train_index], self.target[test_index]
 
-            if scale == True:
+            if self.scale:
                 # Scale the features
                 scaler = StandardScaler()
                 X_train = scaler.fit_transform(X_train.reshape(-1, X_train.shape[-1])).reshape(X_train.shape)
@@ -240,7 +238,7 @@ class CNN_Classifier:
         # Trainning the final model on the entire dataset to save
         final_model = self.create_cnn_model(input_shape=self.features.shape[1:])
 
-        if scale:
+        if self.scale:
             # Scale the features
             scaler = StandardScaler()
             self.features = scaler.fit_transform(self.features.reshape(-1, self.features.shape[-1])).reshape(
