@@ -1,4 +1,5 @@
 # BioSigClass_NIRS
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.15650213.svg)](https://doi.org/10.5281/zenodo.15650213)
 
 **BioSigClass_NIRS** is a repository that provides implementations of machine learning (K-Nearest Neighbors (KNN) with Dynamic Time Wrapping (DTW) and Canonical Interval Forests (CIF)) and deep learning models (convolutional neural networks (CNN)) for classifying Near-Infrared Spectroscopy (NIRS) data related to human tissue oxygenation. The models are particularly trained on data from the vastus lateralis muscle. Developed as part of a study on muscle oxygenation and blood flow, the models are trained on these parameters across various physical activity states (rest, unloaded exercise, exercise, and recovery) to classify between post-hospitalized long COVID-19 patients and healthy, age-matched individuals.
 
@@ -107,3 +108,20 @@ cnn.train()
 TOI: Total Oxygen Index (refered to as StiO2 as well)
 
 nTHI: normalized Total Haemoglobin Index
+
+## Citation
+
+If you use the pretrained models or the training procedures provided in this repository in your research, please cite:
+
+> Dimitrios Megaritis (2025). *BioSigClass_NIRS*. Zenodo. https://doi.org/10.5281/zenodo.15650213
+
+```bibtex
+@software{megaritis_2025_biosigclassnirs,
+  author       = {Dimitrios Megaritis},
+  title        = {BioSigClass\_NIRS},
+  year         = 2025,
+  publisher    = {Zenodo},
+  doi          = {10.5281/zenodo.15650213},
+  url          = {https://doi.org/10.5281/zenodo.15650213}
+}
+
