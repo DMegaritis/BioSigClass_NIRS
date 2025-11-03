@@ -79,13 +79,14 @@ The ```examples``` folder contains:
 
 
 ## Notes to aid re-training of the models
-During training, the following parameters were used:
+During training, the following hyperparameters were used for each model:
 
-| Parameter     | Value    |
-|---------------|----------|
-| n_splits      | 5        |
-| epochs        | 50       |
-| batch_size    | 32       |
+| Feature Set | CNN – Batch Size | CNN – Epochs | CIF – n_estimators | KNN – n_neighbors |
+|--------------|------------------|---------------|--------------------|-------------------|
+| A            | 16               | 180           | 100                | 20                |
+| B            | 32               | 50            | 75                 | 20                |
+| C            | 16               | 160           | 125                | 20                |
+| D            | 32               | 180           | 75                 | 20         
 
 ### Initial training
 ### KNN
